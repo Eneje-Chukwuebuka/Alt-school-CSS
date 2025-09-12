@@ -77,6 +77,33 @@ body {
   transform: scale(1.1);
   opacity: 0.8;
 }
+ .photo-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .tooltip-text {
+      visibility: hidden;
+      width: 160px;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      text-align: center;
+      border-radius: 5px;
+      padding: 5px;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      margin-left: -80px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .photo-container:hover .tooltip-text {
+      visibility: visible;
+      opacity: 1;
+    }
+
 
 .about-myself {
  
@@ -92,6 +119,7 @@ body {
   text-decoration: underline;
   
 }
+
 
 .about-myself p {
   line-height: 4rem;
@@ -122,7 +150,6 @@ body {
 }
 
 .aspirations {
-  /* border: 2px  black; */
   width: 50%;
   height: 100%;
   background-image: inherit;
@@ -136,4 +163,32 @@ body {
 .aspirations ul li {
   list-style: none;
   margin-top: 10px;
+}
+
+.text1, .text2, .text3, {
+    transition: transform 0.3s ease; opacity: 0.3s;
+}
+
+
+}
+.text2:hover {
+ transform: scale(1.1);
+ opacity: 0.8;
+}
+.text1:hover {
+ transform: scale(1.1);
+ opacity: 0.8;
+}
+.text3:hover {
+ transform: scale(1.1);
+ opacity: 0.8;
+}
+
+.grid1 h1 {
+ color: white;
+ transition: color 0.3 ease;
+}
+.grid1 h1:hover {
+  color:rosybrown;
+}
 }
