@@ -1,194 +1,184 @@
+
+/* Reset & base sizing for predictable layouts */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* Page defaults */
 body {
-  margin: 2px;
-  padding:2px;
-  width: 99%;
-  height: 100%;
-  background-color: #f7fafc;
- 
-
-.container {
-  display: grid;
-  grid-template-areas:
-    "header header"
-    "body body"
-    "footer footer";
-  grid-template-columns: 1fr 3fr;
-  gap: 5px;
-  background-image:url(Assets/body-image.jpg);
-  padding: 5px;
-}
-.container div {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background-color: white;
-  /* border: solid 2px black; */
-}
-
-.grid1 {
-  grid-area: header;
-  text-align: center;
-  min-height: 30px;
-  background-image: url(Assets/tech.jpg);
-  background-size: cover;
-  background-position: center;
-  color: whitesmoke;
-}
-
-
-.grid2 {
-  grid-area: body;
-  text-align: center;
-  min-height: 500px;
-  display: flex;
-  justify-content: space-between;
-  background-image: url(Assets/body-image.jpg);
-}
-
-.grid3 {
-  grid-area: footer;
-  text-align: center;
-  min-height: 250px;
-  display: flex;
-  justify-content: space-between;
-
-}
-
-.photo {
-  align-self: center;
-  width:30%;
-  min-height: 80%;
-  margin: 5px;
-  border-radius: 100%;
-  margin-left: 100px;
+  padding: 16px;
   margin-top: 50px;
-  margin-right: 100px ;
-  margin-bottom: 50px;
+
+}
+
+/* Main wrapper: centered, grid-based spacing */
+
+.grid-container {
+  max-width: 1000px;
+  margin: 0 auto; 
+  display: grid;
+  gap: 18px;
+} 
+
+/* Header bar */
+
+.heading {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: #121212;
   text-align: center;
-  background-image: url(Assets/batman.jpg);
-  background-position: center;
-  background-size: cover;
-  transition: transform 0.3s ease; opacity: 0.3s;
-}
-.photo:hover {
-  transform: scale(1.1);
-  opacity: 0.8;
-}
- .photo-container {
-      position: relative;
-      display: inline-block;
-    }
-
-    .tooltip-text {
-      visibility: hidden;
-      width: 160px;
-      background-color: rgba(0, 0, 0, 0.8);
-      color: #fff;
-      text-align: center;
-      border-radius: 5px;
-      padding: 5px;
-      position: absolute;
-      z-index: 1;
-      bottom: 125%;
-      left: 50%;
-      margin-left: -80px;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .photo-container:hover .tooltip-text {
-      visibility: visible;
-      opacity: 1;
-    }
-
-
-.about-myself {
- 
-  border: .5px solid black;
-  width: 50%;
-  margin: 10px;
-  padding: 5px;
-  background-image: url(Assets/about\ myself.jpg);
-  background-position:center;
-  background-size: center;
-}
-.about-myself h3  {
-  text-decoration: underline;
+  color: white;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  border: whitesmoke solid 0.5px;
   
 }
 
+.heading-h1 {
+  transition: color .35s ease;
+  color: rosybrown;
 
-.about-myself p {
-  line-height: 4rem;
 }
-.grid3 {
-  background-image: url(Assets/myself\ picture.jpg);
+
+.heading-h1:hover {
+  color:brown;
 }
-.hobbies {
+
+/* Top section: avatar + about me text */
+
+.top-section {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 1rem;
+  background-color: #0f62fe;
+  border-radius: 25px;
+  border-color: black;
+  border: .5px solid;
+}
+
+/* profile pic div */
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: .5px solid #333;
+  display: flex;
+  overflow: hidden;
+  margin: auto ;
+  transition: transform 0.5s ease;
+}
+.profile-pic img {
+   width:100%;
+   height: 100%;
+   object-fit:cover;
+  object-position: center;
+  transform:scale(1);
+  transition: transform .35s ease;
+  
+}
+.profile-pic:hover img {
+  transform: scale(1.1); 
+  transition: transform .35s ease;
+}
+
+
+/* BOTTOM SECTION FOR HOBBIES AND ASPIRATIONS */
+.bottom-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  background-color: white;
+  border-radius: 27px;
+  padding: 10px;
+  margin-top: 50px;
+
+}
  
-  width: 50%;
-  height: 100%;
-  background-image: inherit;
-  padding: 2px;
-}
-.hobbies h3 {
-  margin-top: 5px;
-  text-decoration: underline;
-}
-.hobbies p {
+.hobbies, .hobbies ul, .hobbies li {
+  list-style: disc;
+  list-style-position: inside;
+  margin-left: 20px;
   margin-top: 3px;
 }
-.hobbies ul li {
-  margin-bottom: 15px;
-  list-style: none;
+
+.hobbies {
+  padding: 10px;
+  border: 2px solid black;
+  background-color:#42be65;
+  border-radius: 25px;
 }
-.hobbies ul {
-  margin-top: 10px;
+.aspiration {
+  padding: 10px;
+  border: 2px solid black;
+  background-color:#42be65;
+  border-radius: 25px;
 }
 
-.aspirations {
-  width: 50%;
-  height: 100%;
-  background-image: inherit;
-  padding: 2px;
-}
-.aspirations h3 {
+
+ .aspiration ul, .aspiration li  {
+  list-style: disc;
+  list-style-position: inside;
+  margin-left: 60px;
   margin-top: 5px;
-  text-decoration: underline;
 }
 
-.aspirations ul li {
-  list-style: none;
-  margin-top: 10px;
+.hobbies-para {
+  margin-bottom: 10px;
 }
 
-.text1, .text2, .text3, {
-    transition: transform 0.3s ease; opacity: 0.3s;
+/* H3 HEADER EFFECTS */
+
+.aboutme-h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.hobbies-h3 {
+   text-align: center;
+  margin-bottom: 10px;
 }
 
-
-}
-.text2:hover {
- transform: scale(1.1);
- opacity: 0.8;
-}
-.text1:hover {
- transform: scale(1.1);
- opacity: 0.8;
-}
-.text3:hover {
- transform: scale(1.1);
- opacity: 0.8;
+.aspiration-h3 {
+  text-align: center;
+  margin-bottom: 10px;
 }
 
-.grid1 h1 {
- color: white;
- transition: color 0.3 ease;
+/* HOVERING SECTION FOR DIV */
+
+.top-section:hover {
+  box-shadow: 5px 5px 5px #aaaaaa;
+   transform: scale(1.1);
+   transition: transform .35s ease;
 }
-.grid1 h1:hover {
-  color:rosybrown;
+.hobbies:hover {
+  box-shadow: 5px 5px 5px #aaaaaa;
+   transform: scale(1.1);
+   transition: transform .35s ease;
 }
+.aspiration:hover{
+  box-shadow: 5px 5px 5px #aaaaaa;
+   transform: scale(1.1);
+   transition: transform .35s ease;
+
+}
+
+/* media responsiveness */
+
+@media (max-width: 600px) {
+  .top-section {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .profile-pic {
+    margin: 0 auto 15px;
+  }
+
+  .bottom-section {
+    grid-template-columns: 1fr;
+  }
 }
